@@ -30,7 +30,25 @@ play_help = input("Do You want help? y = yes, n = no \n")
 if play_help == "y":
     play_rules = rules_help()
     print(play_rules)
+else:
+    print("Starting Game....!\n Let's play...!")
 
+
+def main():
+    global attempts
+    global display
+    global word
+    global already_guessed
+    global length
+    global play_game
+    words_to_guess = ["january","border","image","film","promise","kids","lungs","doll","rhyme","damage"
+                   ,"plants"]
+    word = random.choice(words_to_guess)
+    length = len(word)
+    attempts = 0
+    display = '-' * length
+    already_guessed = []
+    play_game = ""             
 
 
 
