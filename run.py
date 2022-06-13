@@ -41,7 +41,7 @@ def main():
     global already_guessed
     global length
     global play_game
-    words_to_guess = ["january", "border", "image", "film", "promise", "kids", "lungs", "doll", "rhyme", "damage"]
+    words_to_guess = ["january", "border", "image", "film", "promise", "kids"]
     word = random.choice(words_to_guess)
     length = len(word)
     attempts = 0
@@ -55,8 +55,8 @@ def main():
 
 def game_loop():
     global play_game
-    play_game = input(Do You want to play again? y = yes, n = no \n")
-    while play_game not in ["y", "n","Y","N"]:
+    play_game = input("Do you want to play again? y = yes, n = no \n")
+    while play_game not in ["y", "n", "Y", "N"]:
         play_game = input("Do You want to play again? y = yes, n = no \n")
     if play_game == "y":
         main()
@@ -68,30 +68,90 @@ def game_loop():
 
 
 def hangman():
-    global count
+    global attempts
     global display
     global word
     global already_guessed
     global play_game
-    limit = 5
+    global original_word    
+    max_attempts = 5
     guess = input("This is the Hangman Word: " + display + " Enter your guess: \n")
     guess = guess.strip()
-    if len(guess.strip()) == 0 or len(guess.strip()) >= 2 or guess <= "9":
-        print("Invalid Input, Try a letter\n")
+    if len(guess.strip()) == 0 or guess <= "9":
+        print("Input is Invalid, Try a letter\n")
         hangman()
 
     elif guess in word:
         already_guessed.extend([guess])
         index = word.find(guess)
-        word = word[:index] + "_" + word[index + 1:]
-        display = display[:index] + guess + display[index + 1:]
-        print(display + "\n")
 
     elif guess in already_guessed:
         print("Try another letter.\n")
 
     else:
-        count+=1
+        attempts += 1
+
+        if attempts == 1:
+
+           print("   _____ \n"
+                  "  |      \n"
+                  "  |      \n"
+                  "  |      \n"
+                  "  |      \n"
+                  "  |      \n"
+                  "  |      \n"
+                  "__|__\n")
+          print("Oops!!Wrong guess. " + str(max_attempts - attempts) + " guesses remaining\n")
+
+        elif attempts == 2:
+           
+            print("   _____ \n"
+                  "  |     | \n"
+                  "  |     |\n"
+                  "  |      \n"
+                  "  |      \n"
+                  "  |      \n"
+                  "  |      \n"
+                  "__|__\n")
+            print("Oops!!Wrong guess. " + str(max_attempts - attempts) + " guesses remaining\n")
+
+        elif attempts == 3:
+           
+           print("   _____ \n"
+                 "  |     | \n"
+                 "  |     |\n"
+                 "  |     | \n"
+                 "  |      \n"
+                 "  |      \n"
+                 "  |      \n"
+                 "__|__\n")
+           print("Oops!!Wrong guess. " + str(max_attempts - attempts) + " guesses remaining\n")
+
+        elif attempts == 4:
+            
+            print("   _____ \n"
+                  "  |     | \n"
+                  "  |     |\n"
+                  "  |     | \n"
+                  "  |     O \n"
+                  "  |      \n"
+                  "  |      \n"
+                  "__|__\n")
+            print("Oops!!Wrong guess. " + str(max_attempts - attempts) + " last guess remaining\n")
+
+        elif attempts == 5:
+           
+            print("   _____ \n"
+                  "  |     | \n"
+                  "  |     |\n"
+                  "  |     | \n"
+                  "  |     O \n"
+                  "  |    /|\ \n"
+                  "  |    / \ \n"
+                  "__|__\n")
+            print("Sorry!! You have lost this game. You are hanged!!!\n")
+ 
+        
 
 
 
