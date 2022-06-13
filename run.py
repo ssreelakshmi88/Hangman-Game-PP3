@@ -85,8 +85,19 @@ def hangman():
         already_guessed.extend([guess])
         index = word.find(guess)
 
+    #loop as along as there as letters to replace
+    start = 0
+    while index >= 0:
+        word = word[:index] + "_" + word[index + 1:]
+        display = display[:index] + guess + display[index + 1:]
+        start=index
+        index = word.find(guess,index)
+
+        print(display + "\n")
+
+
     elif guess in already_guessed:
-        print("Try another letter.\n")
+    print("Try another letter.\n")
 
     else:
         attempts += 1
@@ -101,7 +112,7 @@ def hangman():
                   "  |      \n"
                   "  |      \n"
                   "__|__\n")
-          print("Oops!!Wrong guess. " + str(max_attempts - attempts) + " guesses remaining\n")
+           print("Oops!!Wrong guess. " + str(max_attempts - attempts) + " guesses remaining\n")
 
         elif attempts == 2:
            
@@ -150,6 +161,12 @@ def hangman():
                   "  |    / \ \n"
                   "__|__\n")
             print("Sorry!! You have lost this game. You are hanged!!!\n")
+
+# print the correct word
+
+           print ("The word was:",original_word)
+           game_loop()
+        
  
         
 
