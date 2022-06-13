@@ -164,8 +164,19 @@ def hangman():
 
 # print the correct word
 
-           print ("The word was:",original_word)
-           game_loop()
+        print ("The word was:",original_word)
+        game_loop()
+
+        if word == '_' * length:
+        print("Congrats! You have won this game!")
+        game_loop()
+
+        elif attempts != max_attempts:
+        hangman()
+
+main()
+
+hangman()   
         
  
         
