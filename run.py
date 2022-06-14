@@ -1,4 +1,5 @@
 import random
+from words import computer_names
 
 # Initial Steps to invite in the game:
 print("\nWelcome to Hangman game\n")
@@ -41,8 +42,7 @@ def main():
     global already_guessed
     global length
     global play_game
-    words_to_guess = ["january", "border", "image", "film", "promise", "kids"]
-    word = random.choice(words_to_guess)
+    word = random.choice(computer_names)
     length = len(word)
     attempts = 0
     display = '-' * length
@@ -100,7 +100,7 @@ def hangman():
     print("Try another letter.\n")
 
     else:
-        attempts += 1
+    attempts += 1
 
         if attempts == 1:
 
@@ -168,7 +168,7 @@ def hangman():
         game_loop()
 
         if word == '_' * length:
-        print("Congrats! You have won this game!")
+         print("Congrats! You have won this game!")
         game_loop()
 
         elif attempts != max_attempts:
