@@ -13,8 +13,8 @@ def rules_help():
     \n \033[3;33m Rules: \033[0;0m \n
     The Hangman is a simple, word game 
     where the goal is to find the missing words.
-    The theme of the game is 'Animals'\n
-    1. From the list of animals a random word is generated.
+    The theme of the game is 'Computer'\n
+    1. From the list of computer-words a random word is generated.
     2. You will be presented with a number of blank spaces/n
     3. You must enter one letter.
     4. You can have only 6 guesses to find out the secret word.
