@@ -1,7 +1,7 @@
 import random
 from words import computer_names
 
-ATTEMPTS = 0
+attempts = 0
 
 # Initial Steps to invite in the game:
 print("\nWelcome to Hangman game\n")
@@ -20,7 +20,7 @@ def rules_help():
     1. From the list of computer-words a random word is generated.
     2. You will be presented with a number of blank spaces/n
     3. You must enter one letter.
-    4. You can have only 6 guesses to find out the secret word.
+    4. You can have only 5 guesses to find out the secret word.
     5. You can only use characters from the latin alphabet.
     6. Use the keyboard to guess the letter. It is better to start with vowels.
     7. You wont be penalized for using symbol or number or for reusing the
@@ -38,14 +38,14 @@ else:
 
 
 def main():
-    global ATTEMPTS
+    global attempts
     global display
     global word
     global already_guessed
     global length
     global play_game
     global original_word
-    ATTEMPTS = 0
+    attempts = 0
     word = random.choice(computer_names)
     original_word = word
     length = len(word)
@@ -72,15 +72,15 @@ def game_loop():
 
 
 def hangman():
-    global ATTEMPTS
+    global attempts
     global display
     global word
     global already_guessed
     global play_game
-    max_ATTEMPTS = 5
+    max_attempts = 5
     guess = input("This is the Hangman Word: " + display + " Enter your guess: \n")
     guess = guess.strip()
-    if len(guess.strip()) == 0 or len(guess.strip()) >= 2 or guess <= "9":
+    if len(guess.strip()) > 1 or not guess.isalpha():
         print("Input is Invalid, Try a letter\n")
         hangman()
 
@@ -88,9 +88,11 @@ def hangman():
         already_guessed.extend([guess])
         index = word.find(guess)
     # Loop as along as there as letters to replace
+        start = 0
         while index >= 0:
             word = word[:index] + "_" + word[index + 1:]
             display = display[:index] + guess + display[index + 1:]
+            start = index
             index = word.find(guess, index)
 
             print(display + "\n")
@@ -98,9 +100,9 @@ def hangman():
         print("Try another letter.\n")
 
     else:
-        ATTEMPTS += 1
+        attempts += 1
 
-        if ATTEMPTS == 1:
+        if attempts == 1:
 
             print("   ___ \n"
                     "  |      \n"
@@ -110,9 +112,9 @@ def hangman():
                     "  |      \n"
                     "  |      \n"
                     " _|_\n")
-            print("Oops!!Wrong guess. " + str(max_ATTEMPTS - ATTEMPTS) + " guesses remaining\n")
+            print("Oops!!Wrong guess. " + str(max_attempts - attempts) + " guesses remaining\n")
 
-        elif ATTEMPTS == 2:       
+        elif attempts == 2:
             print("   ___ \n"
                   "  |     | \n"
                   "  |     |\n"
@@ -121,9 +123,9 @@ def hangman():
                   "  |      \n"
                   "  |      \n"
                   "_|_\n")
-            print("Oops!!Wrong guess. " + str(max_ATTEMPTS - ATTEMPTS) + " guesses remaining\n")
+            print("Oops!!Wrong guess. " + str(max_attempts - attempts) + " guesses remaining\n")
 
-        elif ATTEMPTS == 3:  
+        elif attempts == 3:
             print("   ___ \n"
                     "  |     | \n"
                     "  |     |\n"
@@ -132,9 +134,9 @@ def hangman():
                     "  |      \n"
                     "  |      \n"
                     "_|_\n")
-            print("Oops!!Wrong guess. " + str(max_ATTEMPTS - ATTEMPTS) + " guesses remaining\n")
+            print("Oops!!Wrong guess. " + str(max_attempts - attempts) + " guesses remaining\n")
 
-        elif ATTEMPTS == 4:
+        elif attempts == 4:
             print("   ___ \n"
                   "  |     | \n"
                   "  |     |\n"
@@ -143,9 +145,9 @@ def hangman():
                   "  |      \n"
                   "  |      \n"
                   "_|_\n")
-            print("Oops!!Wrong guess. " + str(max_ATTEMPTS - ATTEMPTS) + " last guess remaining\n")
+            print("Oops!!Wrong guess. " + str(max_attempts - attempts) + " last guess remaining\n")
 
-        elif ATTEMPTS == 5:
+        elif attempts == 5:
             print("   ___ \n"
                   "  |     | \n"
                   "  |     |\n"
@@ -162,7 +164,7 @@ def hangman():
     if word == '_' * length:
         print("Congrats! You have won this game!")
         game_loop()
-    elif ATTEMPTS != max_ATTEMPTS:
+    elif attempts != max_attempts:
         hangman()
 
 
