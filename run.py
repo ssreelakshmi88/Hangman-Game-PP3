@@ -1,3 +1,8 @@
+""" Importing libraries to use in system.
+Import allows access to the modules.
+Hangman words are imported from file words.py
+"""
+
 import random
 from words import computer_names
 
@@ -11,7 +16,7 @@ original_word = "global"
 
 # Initial Steps to invite in the game:
 print("\nWelcome to Hangman game\n")
-name = input("Enter your name: ")
+name = input("Please enter your name: ")
 print("Hello " + name + "! Good Luck!" "The game is about to start")
 
 
@@ -85,7 +90,7 @@ def game_loop():
 def hangman():
     """ Hangman function is the core part of the game.
     This is responsible for initializing all the conditions
-    required to guess, display letters and formation of 
+    required to guess, display letters and formation of
     hangman structure
     """
     global attempts
@@ -104,13 +109,10 @@ def hangman():
         already_guessed.extend([guess])
         index = word.find(guess)
     # Loop as along as there as letters to replace
-        start = 0
         while index >= 0:
             word = word[:index] + "_" + word[index + 1:]
             display = display[:index] + guess + display[index + 1:]
-            start = index
             index = word.find(guess, index)
-
             print(display + "\n")
     elif guess in already_guessed:
         print("Try another letter.\n")
@@ -120,14 +122,14 @@ def hangman():
 
         if attempts == 1:
 
-            print("   ___ \n"
-                    "  |      \n"
-                    "  |      \n"
-                    "  |      \n"
-                    "  |      \n"
-                    "  |      \n"
-                    "  |      \n"
-                    " _|_\n")
+            print("   _____ \n"
+                  "  |      \n"
+                  "  |      \n"
+                  "  |      \n"
+                  "  |      \n"
+                  "  |      \n"
+                  "  |      \n"
+                  "__|__\n")
             print("Oops!!Wrong guess. " + str(max_attempts - attempts) + " guesses remaining\n")
 
         elif attempts == 2:
@@ -138,18 +140,18 @@ def hangman():
                   "  |      \n"
                   "  |      \n"
                   "  |      \n"
-                  "_|_\n")
+                  " _|_\n")
             print("Oops!!Wrong guess. " + str(max_attempts - attempts) + " guesses remaining\n")
 
         elif attempts == 3:
-            print("   ___ \n"
-                    "  |     | \n"
-                    "  |     |\n"
-                    "  |     | \n"
-                    "  |      \n"
-                    "  |      \n"
-                    "  |      \n"
-                    "_|_\n")
+            print("  _____ \n"
+                  "  |     | \n"
+                  "  |     |\n"
+                  "  |     | \n"
+                  "  |      \n"
+                  "  |      \n"
+                  "  |      \n"
+                  "__|__\n")
             print("Oops!!Wrong guess. " + str(max_attempts - attempts) + " guesses remaining\n")
 
         elif attempts == 4:
@@ -160,7 +162,7 @@ def hangman():
                   "  |     O \n"
                   "  |      \n"
                   "  |      \n"
-                  "_|_\n")
+                  " _|_\n")
             print("Oops!!Wrong guess. " + str(max_attempts - attempts) + " last guess remaining\n")
 
         elif attempts == 5:
@@ -171,7 +173,7 @@ def hangman():
                   "  |     O \n"
                   "  |    /|\ \n"
                   "  |    / \ \n"
-                  "_|_\n")
+                  " _|_\n")
             print("Sorry!! You have lost this game. You are hanged!!!\n")
             # print the correct word
             print("The word was:", original_word)
