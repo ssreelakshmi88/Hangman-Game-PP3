@@ -1,6 +1,10 @@
 # Hangman
 “Hangman” is a classic word game. The concept is to guess the correct word with minimum attempts possible. The user will be penalized for each incorrect guess by the appearance of apparatus for hanging in a step-by-step fashion finally culminating with the appearance of a hanging man. I have developed this game based on computer word list. This game has been developed with Python. 
 
+
+![Screenshot_front](https://user-images.githubusercontent.com/97182442/173900203-68d3fd57-ce2f-4c29-86aa-dfd839f3b552.png)
+
+
 ## UX (User Experience)
 
 ### User stories
@@ -41,12 +45,22 @@ Web-based diagramming application used to build flowchart.
 
 1. Wireframe of the welcome page
 
+
+![Welcome page](https://user-images.githubusercontent.com/97182442/173900280-4cc9dcf0-33fc-45be-b952-81d09f8614cd.png)
+
+
 2. Wireframe of the game page
+
+
+![Game page](https://user-images.githubusercontent.com/97182442/173900346-dfa2f941-f821-4216-89a2-7ac00c817ee1.png)
 
 
 ### Flowchart
 
 
+
+
+![Flowchart](https://user-images.githubusercontent.com/97182442/173900409-b148170c-1c21-4bb7-9614-fabc782319e0.png)
 
 
 ### Features
