@@ -1,31 +1,115 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Hangman
+“Hangman” is a classic word game. The concept is to guess the correct word with minimum attempts possible. The user will be penalized for each incorrect guess by the appearance of apparatus for hanging in a step-by-step fashion finally culminating with the appearance of a hanging man. I have developed this game based on computer word list. This game has been developed with Python. 
 
-Welcome Sreelakshmi Sasidharan,
+## UX (User Experience)
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+### User stories
 
-## Reminders
+#### First Time Visitor Goals
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+- As a first time visitor, I want to understand the rules to play the game.
 
-## Creating the Heroku app
+- As the game ends, I want to see the final score. 
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+### Technologies Used
 
-1. `heroku/python`
-2. `heroku/nodejs`
+### Languages Used
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+1. Python
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+#### Git
 
-Connect your GitHub repository and deploy as normal.
+Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
 
-## Constraints
+#### GitHub
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+GitHub is used to store the projects code after being pushed from Git.
 
------
-Happy coding!
+#### Balsamiq Wireframes
+
+Downloadable software to create the wireframe mockups.
+
+
+#### Lucidchart
+
+Web-based diagramming application used to build flowchart.
+
+
+### Wireframes
+
+1. Wireframe of the welcome page
+
+2. Wireframe of the game page
+
+
+### Flowchart
+
+
+
+
+### Features
+
+#### Existing features
+
+1. The start screen will display an option to enter player name.
+
+2. Option for user to access game rules has been provided including the theme i.e., animal word list.
+
+3. The player has 5 attempts to guess the right word from the computer vocabulary.
+
+4. Each wrong attempt will be penalized by a step-by-step appearance of a hanging man. 
+
+5. Each correct guess (alphabet) will appear in the blank spaces in the correct order of the words in the computer vocabulary. 
+
+6. In case the player fails and end the game, the correct answer will be displayed.
+
+7. If the player wishes to continue, after each play he/she can do so by clicking the continue button.
+
+
+## Testing
+
+For this project I have done the following tests:
+
+- Passed the code through a PEP8 liner and confirmed there are no errors.
+
+- Using directional key inputs'.
+
+- Tested in my local terminal and Code Institute Heroku terminal
+
+
+#### Validator testing
+
+- PEP8 No errors were found in PEP8online.com
+
+### Deployment
+
+This project was deployed using Code Insitute's mock terminal for Heroku.
+
+#### Steps for deployment
+
+1. Fork or clone the repository.
+
+2. Create a new Heroku app.
+
+3. Set the buildbacks to Python and NodeJS in that order.
+
+4. Link the Heroku app to the repository.
+
+5. Click on Deploy
+
+
+## Credits
+
+- Code Institute for the deployment terminal and template
+- My mentor, Narendar Singh for his valuable advice and feedback.
+- Words were generated from https://www.enchantedlearning.com/wordlist/computer.shtml
+
+
+
+
+
+
+
+
+
+
