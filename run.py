@@ -1,7 +1,13 @@
 import random
 from words import computer_names
 
-attempts = 0
+attempts = "global"
+display = "global"
+word = "global"
+already_guessed = "global"
+length = "global"
+play_game = "global"
+original_word = "global"
 
 # Initial Steps to invite in the game:
 print("\nWelcome to Hangman game\n")
@@ -38,6 +44,9 @@ else:
 
 
 def main():
+
+    """ Displays the parameters used in the game
+    """
     global attempts
     global display
     global word
@@ -58,6 +67,8 @@ def main():
 
 
 def game_loop():
+    """ This function will be executed when the first round of the game ends
+    """
     global play_game
     play_game = input("Do you want to play again? y = yes, n = no \n")
     while play_game not in ["y", "n", "Y", "N"]:
@@ -72,6 +83,11 @@ def game_loop():
 
 
 def hangman():
+    """ Hangman function is the core part of the game.
+    This is responsible for initializing all the conditions
+    required to guess, display letters and formation of 
+    hangman structure
+    """
     global attempts
     global display
     global word
