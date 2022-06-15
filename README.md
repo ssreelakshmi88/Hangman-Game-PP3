@@ -9,7 +9,9 @@
 
 - As a first time visitor, I want to understand the rules to play the game.
 
-- As the game ends, I want to see the final score. 
+- I want to be able to replay the game without repeating the same word each time.
+
+-I want to build my vocabulary in computer field.
 
 ### Technologies Used
 
