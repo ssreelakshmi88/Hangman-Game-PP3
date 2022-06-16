@@ -5,6 +5,7 @@ Hangman words are imported from file words.py
 
 import random
 from words import computer_names
+from status import HANGMAN_STAGE
 
 
 ATTEMPTS = "global"
