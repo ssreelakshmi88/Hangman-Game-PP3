@@ -2,12 +2,13 @@
 Import allows access to the modules.
 Hangman words are imported from file words.py
 """
+
 import os
 import random
 import time
-from words import computer_names
-from status import HANGMAN_STAGE
 
+from status import HANGMAN_STAGE
+from words import computer_names
 
 ATTEMPTS = "global"
 DISPLAY = "global"
@@ -18,8 +19,6 @@ PLAY_GAME = "global"
 ORIGINAL_WORD = "global"
 MAX_ATTEMPTS = 5
 USERNAME = None
-
-# Initial Steps to invite in the game:
 
 
 def get_user_detail():
@@ -38,13 +37,13 @@ def rules_help():
     """
     rules = ''' \n <------------------------------------------------------------>
     \n \033[3;33m Rules: \033[0;0m \n
-    The Hangman is a simple, word game
+    The Hangman is a simple, WORD game
     where the goal is to find the missing words.
     The theme of the game is 'Computer'\n
-    1. From the list of computer-words a random word is generated.
+    1. From the list of computer-words a random WORD is generated.
     2. You will be presented with a number of blank spaces/n
     3. You must enter one letter.
-    4. You can have only 5 guesses to find out the secret word.
+    4. You can have only 5 guesses to find out the secret WORD.
     5. You can only use characters from the latin alphabet.
     6. Use the keyboard to guess the letter. It is better to start with vowels.
     7. You wont be penalized for using symbol or number or for reusing the
@@ -93,12 +92,20 @@ def game_loop():
         exit()
 
 
+def is_user_ready_to_play():
+    """check_if_user_needs_help"""
+    is_help_needed = input(
+        f"Hey {USERNAME}, Do You want help? y = yes, n = no \n").lower()
+    while is_help_needed == 'y':
+        play_rules = rules_help()
+        print(play_rules)
+        is_help_needed = input("Do You want help? y = yes, n = no \n").lower()
+    return True
+
+
 def is_guess_included_in_word(guess):
-    """ This function checks whether the guess entered by the player
-    is present in the actual word or not. If yes, it will be displayed
-    in the blank spaces.
-    """
     global WORD, DISPLAY
+
     ALREADY_GUESSED.extend([guess])
     index = WORD.find(guess)
     if not index:
@@ -109,8 +116,6 @@ def is_guess_included_in_word(guess):
         DISPLAY = DISPLAY[:index] + guess + DISPLAY[index + 1:]
         index = WORD.find(guess, index)
     return True
-
-# Initializing all the conditions required for the game:
 
 
 def display_hangman_status():
@@ -134,8 +139,6 @@ def display_hangman_status():
 
 
 def is_winner():
-     """diplays hangman status on screen"""
-     
     global WORD, LENGTH, ATTEMPTS, MAX_ATTEMPTS
     if WORD == '_' * LENGTH:
         print("Congrats! You have won this game!")
@@ -143,7 +146,6 @@ def is_winner():
     elif ATTEMPTS != MAX_ATTEMPTS:
         return False
 
-            
 
 def play_game():
     """ Hangman function is the core part of the game.
@@ -173,3 +175,16 @@ def play_game():
             break
         time.sleep(1)
         os.system('clear')
+
+
+def init_game_engine():
+    initialize_game()
+    if is_user_ready_to_play():
+        print("Starting Game....!\n Let's play...!")
+        os.system('clear')
+        play_game()
+
+
+if __name__ == "__main__":
+    while True:
+        init_game_engine()
