@@ -112,104 +112,34 @@ def is_guess_included_in_word(guess):
 # Initializing all the conditions required for the game:
 
 
-def hangman():
-    """ Hangman function is the core part of the game.
-    This is responsible for initializing all the conditions
-    required to guess, display letters and formation of
-    hangman structure
-    """
-    global attempts
-    global display
-    global word
-    global already_guessed
-    global play_game
-    max_attempts = 5
-    guess = input("This is the Hangman Word: " + display + " Enter your guess: \n")
-    guess = guess.strip()
-    if len(guess.strip()) > 1 or not guess.isalpha():
-        print("Input is Invalid, Try a letter\n")
-        hangman()
+def display_hangman_status():
+    """diplays hangman status on screen"""
 
-    elif guess in word:
-        already_guessed.extend([guess])
-        index = word.find(guess)
-    # Loop as along as there as letters to replace
-        while index >= 0:
-            word = word[:index] + "_" + word[index + 1:]
-            display = display[:index] + guess + display[index + 1:]
-            index = word.find(guess, index)
-            print(display + "\n")
-    elif guess in already_guessed:
-        print("Try another letter.\n")
-
-    else:
-        attempts += 1
-
-        if attempts == 1:
-
-            print("   _____ \n"
-                  "  |      \n"
-                  "  |      \n"
-                  "  |      \n"
-                  "  |      \n"
-                  "  |      \n"
-                  "  |      \n"
-                  "__|__\n")
-            print("Oops!!Wrong guess. " + str(max_attempts - attempts) + " guesses remaining\n")
-
-        elif attempts == 2:
-            print("   ___ \n"
-                  "  |     | \n"
-                  "  |     |\n"
-                  "  |      \n"
-                  "  |      \n"
-                  "  |      \n"
-                  "  |      \n"
-                  " _|_\n")
-            print("Oops!!Wrong guess. " + str(max_attempts - attempts) + " guesses remaining\n")
-
-        elif attempts == 3:
-            print("  _____ \n"
-                  "  |     | \n"
-                  "  |     |\n"
-                  "  |     | \n"
-                  "  |      \n"
-                  "  |      \n"
-                  "  |      \n"
-                  "__|__\n")
-            print("Oops!!Wrong guess. " + str(max_attempts - attempts) + " guesses remaining\n")
-
-        elif attempts == 4:
-            print("   ___ \n"
-                  "  |     | \n"
-                  "  |     |\n"
-                  "  |     | \n"
-                  "  |     O \n"
-                  "  |      \n"
-                  "  |      \n"
-                  " _|_\n")
-            print("Oops!!Wrong guess. " + str(max_attempts - attempts) + " last guess remaining\n")
-
-        elif attempts == 5:
-            print("   ___ \n"
-                  "  |     | \n"
-                  "  |     |\n"
-                  "  |     | \n"
-                  "  |     O \n"
-                  "  |    /|\ \n"
-                  "  |    / \ \n"
-                  " _|_\n")
-            print("Sorry!! You have lost this game. You are hanged!!!\n")
-            # print the correct word
-            print("The word was:", original_word)
-            game_loop()
-
-    if word == '_' * length:
-        print("Congrats! You have won this game!")
+    global MAX_ATTEMPTS, ATTEMPTS
+    print(ATTEMPTS)
+    print(HANGMAN_STAGE[ATTEMPTS])
+    if ATTEMPTS in [0, 1, 2]:
+        print("Oops!!Wrong guess. " +
+              str(MAX_ATTEMPTS - ATTEMPTS) + " guesses remaining\n")
+    elif ATTEMPTS == 3:
+        attemtps = MAX_ATTEMPTS - ATTEMPTS
+        print(f"Oops!! Wrong guess. {attemtps} last guess remaining\n")
+    elif ATTEMPTS == 4:
+        print("Sorry!! You have lost this game. You are hanged!!!\n")
+        # print the correct WORD
+        print("The WORD was:", ORIGINAL_WORD)
         game_loop()
-    elif attempts != max_attempts:
-        hangman()
+    ATTEMPTS += 1
 
 
+def is_winner():
+     """diplays hangman status on screen"""
+     
+    global WORD, LENGTH, ATTEMPTS, MAX_ATTEMPTS
+    if WORD == '_' * LENGTH:
+        print("Congrats! You have won this game!")
+        return True
+    elif ATTEMPTS != MAX_ATTEMPTS:
+        return False
 
-hangman()
+            
