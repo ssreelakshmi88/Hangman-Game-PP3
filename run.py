@@ -51,32 +51,27 @@ def rules_help():
     return rules
 
 
-play_help = input("Do You want help? y = yes, n = no \n")
-if play_help == "y":
-    play_rules = rules_help()
-    print(play_rules)
-else:
-    print("Starting Game....!\n Let's play...!")
-
-
-def main():
-
+# Initializing all the conditions required for the game:
+def initialize_game():
     """ Displays the parameters used in the game
     """
-    global attempts
-    global display
-    global word
-    global already_guessed
-    global length
-    global play_game
-    global original_word
-    attempts = 0
-    word = random.choice(computer_names)
-    original_word = word
-    length = len(word)
-    display = '-' * length
-    already_guessed = []
-    play_game = ""
+    global ATTEMPTS
+    global DISPLAY
+    global WORD
+    global ALREADY_GUESSED
+    global LENGTH
+    global PLAY_GAME
+    global ORIGINAL_WORD
+    global MAX_ATTEMPTS
+    ATTEMPTS = 0
+    WORD = random.choice(computer_names)
+    ORIGINAL_WORD = WORD
+    LENGTH = len(WORD)
+    DISPLAY = '-' * LENGTH
+    ALREADY_GUESSED = []
+    PLAY_GAME = ""
+    MAX_ATTEMPTS = 5
+    get_user_detail()
 
 
 # A loop to re-execute the game when the first round ends
@@ -197,6 +192,5 @@ def hangman():
         hangman()
 
 
-main()
 
 hangman()
