@@ -2,8 +2,9 @@
 Import allows access to the modules.
 Hangman words are imported from file words.py
 """
-
+import os
 import random
+import time
 from words import computer_names
 from status import HANGMAN_STAGE
 
@@ -143,3 +144,32 @@ def is_winner():
         return False
 
             
+
+def play_game():
+    """ Hangman function is the core part of the game.
+    This is responsible for initializing all the conditions
+    required to guess, DISPLAY letters and formation of
+    hangman structure
+    """
+    global ATTEMPTS
+    global DISPLAY
+    global WORD
+    global ALREADY_GUESSED
+    global MAX_ATTEMPTS
+
+    while ATTEMPTS <= MAX_ATTEMPTS:
+        guess = input("This is the Hangman WORD: " +
+                      DISPLAY + "\nEnter your guess: \n").strip()
+
+        if len(guess.strip()) > 1 or not guess.isalpha():
+            print("Input is Invalid, Try a letter\n")
+        elif guess in ALREADY_GUESSED:
+            print("Try another letter.\n")
+        elif is_guess_included_in_word(guess):
+            display_hangman_status()
+        else:
+            display_hangman_status()
+        if is_winner():
+            break
+        time.sleep(1)
+        os.system('clear')
