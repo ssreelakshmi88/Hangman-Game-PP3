@@ -6,18 +6,29 @@ Hangman words are imported from file words.py
 import random
 from words import computer_names
 
-attempts = "global"
-display = "global"
-word = "global"
-already_guessed = "global"
-length = "global"
-play_game = "global"
-original_word = "global"
+
+ATTEMPTS = "global"
+DISPLAY = "global"
+WORD = "global"
+ALREADY_GUESSED = "global"
+LENGTH = "global"
+PLAY_GAME = "global"
+ORIGINAL_WORD = "global"
+MAX_ATTEMPTS = 5
+USERNAME = None
 
 # Initial Steps to invite in the game:
-print("\nWelcome to Hangman game\n")
-name = input("Please enter your name: ")
-print("Hello " + name + "! Good Luck!" "The game is about to start")
+
+
+def get_user_detail():
+    """
+    get user name and store it in the username
+    """
+    global USERNAME
+    # Initial Steps to invite in the game:
+    print("\nWelcome to Hangman game\n")
+    USERNAME = input("Please enter your name: ")
+    print("Hello " + USERNAME + "! Good Luck!" "The game is about to start")
 
 
 def rules_help():
