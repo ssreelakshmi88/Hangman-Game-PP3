@@ -80,15 +80,33 @@ def initialize_game():
 def game_loop():
     """ This function will be executed when the first round of the game ends
     """
-    global play_game
-    play_game = input("Do you want to play again? y = yes, n = no \n")
-    while play_game not in ["y", "n", "Y", "N"]:
-        play_game = input("Do You want to play again? y = yes, n = no \n")
-    if play_game == "y":
-        main()
-    elif play_game == "n":
+    global PLAY_GAME
+    PLAY_GAME = input("Do you want to play again? y = yes, n = no \n")
+    while PLAY_GAME not in ["y", "n", "Y", "N"]:
+        PLAY_GAME = input("Do You want to play again? y = yes, n = no \n")
+    if PLAY_GAME == "y":
+        initialize_game()
+    elif PLAY_GAME == "n":
         print("Thank you for Playing! We expect you back again!")
         exit()
+
+
+def is_guess_included_in_word(guess):
+    """ This function checks whether the guess entered by the player
+    is present in the actual word or not. If yes, it will be displayed
+    in the blank spaces.
+    """
+    global WORD, DISPLAY
+    ALREADY_GUESSED.extend([guess])
+    index = WORD.find(guess)
+    if not index:
+        return False
+    # Loop as along as there as letters to replace
+    while index >= 0:
+        WORD = WORD[:index] + "_" + WORD[index + 1:]
+        DISPLAY = DISPLAY[:index] + guess + DISPLAY[index + 1:]
+        index = WORD.find(guess, index)
+    return True
 
 # Initializing all the conditions required for the game:
 
