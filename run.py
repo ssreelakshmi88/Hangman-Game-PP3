@@ -187,7 +187,6 @@ def play_game():
         if is_winner():
             break
         time.sleep(1)
-        os.system('clear')
 
 
 def init_game_engine():
