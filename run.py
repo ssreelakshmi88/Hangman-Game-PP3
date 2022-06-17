@@ -143,10 +143,10 @@ def display_remaining_attemts():
     global MAX_ATTEMPTS, ATTEMPTS
     if ATTEMPTS in [0, 1, 2]:
         print("Oops!!Wrong guess. " +
-              str(MAX_ATTEMPTS - ATTEMPTS) + " guesses attempted\n")
+              str(MAX_ATTEMPTS - ATTEMPTS) + " guesses remaining\n")
     elif ATTEMPTS == 3:
         attemtps = MAX_ATTEMPTS - ATTEMPTS
-        print(f"Oops!! Wrong guess. {attemtps} last guess attempted\n")
+        print(f"Oops!! Wrong guess. {attemtps} last guess remaining\n")
     elif ATTEMPTS == 4:
         print("Sorry!! You have lost this game. You are hanged!!!\n")
         # print the correct WORD
@@ -183,7 +183,7 @@ def is_winner():
 
 
 def play_game():
-    """ Hangman function is the core part of the game.
+    """ Play_game function is the core part of the game.
     This is responsible for initializing all the conditions
     required to guess, DISPLAY letters and formation of
     hangman structure
