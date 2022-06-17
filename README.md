@@ -9,13 +9,26 @@
 
 ### User stories
 
-#### First Time Visitor Goals
+#### User Goals
 
 - As a first time visitor, I want to understand the rules to play the game.
 
 - I want to be able to replay the game without repeating the same word each time.
 
--I want to build my vocabulary in computer field.
+- I want to build my vocabulary in computer field.
+
+- I want to have a positive response to my interaction with the game.
+
+- I want to have a leisurely engagement with a fun game.
+
+- As a user I can give my name and the game welcomes with a greeted message.
+
+- For invalid inputs I will be notified with an error message.
+
+- The game counts down the number of tries remaining for the user.
+
+- The game indicates the user what action must take in each step.
+
 
 ### Technologies Used
 
