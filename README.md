@@ -82,7 +82,7 @@ Web-based diagramming application used to build flowchart.
 
 1. The start screen will display an option to enter player name.
 
-2. Option for user to access game rules has been provided including the theme i.e., animal word list.
+2. Option for user to access game rules has been provided including the theme i.e., computer word list.
 
 3. The player has 5 attempts to guess the right word from the computer vocabulary.
 
@@ -90,9 +90,9 @@ Web-based diagramming application used to build flowchart.
 
 5. Each correct guess (alphabet) will appear in the blank spaces in the correct order of the words in the computer vocabulary. 
 
-6. In case the player fails and end the game, the correct answer will be displayed.
+6. In case the player fails and ends the game, the correct answer will be displayed.
 
-7. If the player wishes to continue, after each play he/she can do so by clicking the continue button.
+7. If the player wishes to continue, after each play he/she can do so by clicking the yes button.
 
 
 ## Testing
@@ -110,6 +110,10 @@ For this project I have done the following tests:
 
 - PEP8 No errors were found in PEP8online.com
 
+- The code was also passed throuth Pylint. I encountered some warnings related to global
+  variables. To solve this issue, I installed pylintrc in my gitpod.
+
+
 ### Deployment
 
 This project was deployed using Code Insitute's mock terminal for Heroku.
@@ -122,9 +126,15 @@ This project was deployed using Code Insitute's mock terminal for Heroku.
 
 3. Set the buildbacks to Python and NodeJS in that order.
 
-4. Link the Heroku app to the repository.
+4. Link Heroku app to the repository using Gitpod terminal
+   - heroku login -i
+   - enter personal email
+   - enter pasword using API Key from Heroku
+   - Got the app name from Heroku by typing in the command "heroku apps".
+   - Set heroku remote by typing heroku "git:remote -a python-portfolio-  project".
+   - Add and commit to GitHub and Heroku by typing "git add . && git commit -m "Deploy to Heroku via CLI"".
+   - Pushed to both GitHub and Heroku by typing "git push origin main" and "git push heroku main".
 
-5. Click on Deploy
 
 
 ## Credits
@@ -132,6 +142,8 @@ This project was deployed using Code Insitute's mock terminal for Heroku.
 - Code Institute for the deployment terminal and template
 - My mentor, Narendar Singh for his valuable advice and feedback.
 - Words were generated from https://www.enchantedlearning.com/wordlist/computer.shtml
+- I have referred w3scools.com
+- For writing the code, I have referred https://www.chegg.com/homework-help/questions-and-answers/write-program-called-hangmanpy-expands-upon-tutorial-8-problem-3-following-changes-made-pr-q88357648
 
 
 
