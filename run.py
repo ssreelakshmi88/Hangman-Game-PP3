@@ -117,7 +117,10 @@ def is_guess_included_in_word(guess):
 
     ALREADY_GUESSED.extend([guess])
     index = WORD.find(guess)
-    if not index:
+    # print(f"ALREADY_GUESSED: {ALREADY_GUESSED}")
+    # print(f"WORD: {WORD}")
+
+    if index < 0:
         return False
     # Loop as along as there as letters to replace
     while index >= 0:
@@ -127,24 +130,40 @@ def is_guess_included_in_word(guess):
     return True
 
 
-def display_hangman_status():
-    """Displays hangman status on screen"""
+def increase_attempts():
+    global ATTEMPTS, MAX_ATTEMPTS
+    ATTEMPTS += 1
+    print(f"Attempted {ATTEMPTS}")
 
+
+def display_remaining_attemts():
+    """Displays remaining attempts="""
     global MAX_ATTEMPTS, ATTEMPTS
-    print(ATTEMPTS)
-    print(HANGMAN_STAGE[ATTEMPTS])
     if ATTEMPTS in [0, 1, 2]:
         print("Oops!!Wrong guess. " +
-              str(MAX_ATTEMPTS - ATTEMPTS) + " guesses remaining\n")
+              str(MAX_ATTEMPTS - ATTEMPTS) + " guesses attempted\n")
     elif ATTEMPTS == 3:
         attemtps = MAX_ATTEMPTS - ATTEMPTS
-        print(f"Oops!! Wrong guess. {attemtps} last guess remaining\n")
+        print(f"Oops!! Wrong guess. {attemtps} last guess attempted\n")
     elif ATTEMPTS == 4:
         print("Sorry!! You have lost this game. You are hanged!!!\n")
         # print the correct WORD
         print("The WORD was:", ORIGINAL_WORD)
-        game_loop()
-    ATTEMPTS += 1
+        # game_loop()
+    # print(f"{ALREADY_GUESSED}")
+
+
+def display_hangman_status():
+    """Displays hangman status on screen"""
+
+    global MAX_ATTEMPTS, ATTEMPTS
+    # print(ATTEMPTS)
+    print(HANGMAN_STAGE[ATTEMPTS])
+
+
+def clear_screen():
+    time.sleep(3)
+    os.system("clear")
 
 
 def is_winner():
@@ -172,7 +191,7 @@ def play_game():
     global ALREADY_GUESSED
     global MAX_ATTEMPTS
 
-    while ATTEMPTS <= MAX_ATTEMPTS:
+    while ATTEMPTS < MAX_ATTEMPTS:
         guess = input("This is the Hangman WORD: " +
                       DISPLAY + "\nEnter your guess: \n").strip()
 
@@ -181,9 +200,15 @@ def play_game():
         elif guess in ALREADY_GUESSED:
             print("Try another letter.\n")
         elif is_guess_included_in_word(guess):
+            # print("Debug-> is included")
+            display_remaining_attemts()
             display_hangman_status()
         else:
+            # print("Debug-> invalid choice made")
+            display_remaining_attemts()
             display_hangman_status()
+            increase_attempts()
+            clear_screen()
         if is_winner():
             break
         time.sleep(1)
