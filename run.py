@@ -104,6 +104,10 @@ def is_user_ready_to_play():
 
 
 def is_guess_included_in_word(guess):
+    """ This function checks if the guess entered by user is
+        present in the word or not. If included, the guess will
+        be displayed in the blank spaces.
+    """
     global WORD, DISPLAY
 
     ALREADY_GUESSED.extend([guess])
@@ -139,6 +143,10 @@ def display_hangman_status():
 
 
 def is_winner():
+    """ This function checks if the guess entered by user is
+        present in the word or not. If included, the guess will
+        be displayed in the blank spaces.
+    """
     global WORD, LENGTH, ATTEMPTS, MAX_ATTEMPTS
     if WORD == '_' * LENGTH:
         print("Congrats! You have won this game!")
@@ -178,6 +186,9 @@ def play_game():
 
 
 def init_game_engine():
+    """
+    This function intializes game again
+    """
     initialize_game()
     if is_user_ready_to_play():
         print("Starting Game....!\n Let's play...!")
