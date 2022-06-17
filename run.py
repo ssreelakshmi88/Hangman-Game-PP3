@@ -142,11 +142,10 @@ def display_remaining_attemts():
     """Displays remaining attempts="""
     global MAX_ATTEMPTS, ATTEMPTS
     if ATTEMPTS in [0, 1, 2]:
-        print("Oops!!Wrong guess. " +
-              str(MAX_ATTEMPTS - ATTEMPTS) + " guesses remaining\n")
+        print(str(MAX_ATTEMPTS - ATTEMPTS) + " guesses remaining\n")
     elif ATTEMPTS == 3:
         attemtps = MAX_ATTEMPTS - ATTEMPTS
-        print(f"Oops!! Wrong guess. {attemtps} last guess remaining\n")
+        print(f"{attemtps} last guess remaining\n")
     elif ATTEMPTS == 4:
         print("Sorry!! You have lost this game. You are hanged!!!\n")
         # print the correct WORD
