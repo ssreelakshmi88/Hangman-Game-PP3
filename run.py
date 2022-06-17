@@ -131,6 +131,8 @@ def is_guess_included_in_word(guess):
 
 
 def increase_attempts():
+    """This function is to count increased attempts"""
+
     global ATTEMPTS, MAX_ATTEMPTS
     ATTEMPTS += 1
     print(f"Attempted {ATTEMPTS}")
@@ -162,6 +164,7 @@ def display_hangman_status():
 
 
 def clear_screen():
+    """This function to clear the screen and delay execution time """
     time.sleep(3)
     os.system("clear")
 
