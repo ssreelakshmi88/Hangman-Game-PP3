@@ -1,6 +1,11 @@
 """ Importing libraries to use in system.
-Import allows access to the modules.
+Import random allows access to the random modules,
+creates random number generation.
 Hangman words are imported from file words.py
+Hangman stages are imported from status.py
+Import time represents time in code
+Os module provides functions for creating
+and removing directory.
 """
 
 import os
@@ -105,7 +110,7 @@ def is_user_ready_to_play():
 
 def is_guess_included_in_word(guess):
     """ This function checks if the guess entered by user is
-        present in the word or not. If included, the guess will
+        present in the word or not. If present, the guess will
         be displayed in the blank spaces.
     """
     global WORD, DISPLAY
@@ -123,7 +128,7 @@ def is_guess_included_in_word(guess):
 
 
 def display_hangman_status():
-    """diplays hangman status on screen"""
+    """Displays hangman status on screen"""
 
     global MAX_ATTEMPTS, ATTEMPTS
     print(ATTEMPTS)
@@ -143,9 +148,9 @@ def display_hangman_status():
 
 
 def is_winner():
-    """ This function checks if the guess entered by user is
-        present in the word or not. If included, the guess will
-        be displayed in the blank spaces.
+    """ This function checks whether all the guesses entered by the user
+        are actually present in original word. If all the guesses are correct,
+        the player wins the game.
     """
     global WORD, LENGTH, ATTEMPTS, MAX_ATTEMPTS
     if WORD == '_' * LENGTH:
