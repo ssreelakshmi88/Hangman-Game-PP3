@@ -149,8 +149,8 @@ def display_hangman_status():
     """Displays hangman status on screen"""
 
     global MAX_ATTEMPTS, ATTEMPTS
-    # print(ATTEMPTS)
-    print(HANGMAN_STAGE[ATTEMPTS])
+
+    print(HANGMAN_STAGE[ATTEMPTS-1])
 
 
 def clear_screen():
@@ -184,7 +184,8 @@ def play_game():
     global ALREADY_GUESSED
     global MAX_ATTEMPTS
 
-    while ATTEMPTS <= MAX_ATTEMPTS:
+    while ATTEMPTS < MAX_ATTEMPTS:
+
         guess = input(
             "This is the Hangman WORD: " + DISPLAY + "\nEnter your guess: \n"
         ).strip()
@@ -194,7 +195,7 @@ def play_game():
         elif guess in ALREADY_GUESSED:
             print("Try another letter.\n")
         elif is_guess_included_in_word(guess):
-            # print("Debug-> is included")
+            # print("iDebug-> is included")
             display_remaining_attemts()
             display_hangman_status()
             clear_screen()
@@ -202,7 +203,7 @@ def play_game():
             # print("Debug-> invalid choice made")
             increase_attempts()
             display_remaining_attemts()
-            if ATTEMPTS < MAX_ATTEMPTS:
+            if ATTEMPTS <= MAX_ATTEMPTS:
                 display_hangman_status()
             clear_screen()
         if is_winner():
