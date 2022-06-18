@@ -93,7 +93,7 @@ Web-based diagramming application used to build flowchart.
 ![rules](https://user-images.githubusercontent.com/97182442/174427554-49b3d8cc-c354-4cae-898f-959337c53f33.png)
 
 
-3. The player has 5 attempts to guess the right word from the computer vocabulary.
+3. The player has 5 attempts to guess the right word from the provided vocabulary.
 
 
 ![hangman stage_1](https://user-images.githubusercontent.com/97182442/174427563-cb71231a-d7cf-49aa-aba1-944a4e317a13.png)
@@ -108,7 +108,7 @@ Web-based diagramming application used to build flowchart.
 ![last stage](https://user-images.githubusercontent.com/97182442/174430168-7df144a4-ac20-4a09-a9b8-bbad39798065.png)
 
 
-5. Each correct guess (alphabet) will appear in the blank spaces in the correct order of the words in the computer vocabulary. 
+5. Each correct guess (alphabet) will appear in the blank spaces in the correct order of the letters that make up the word.
 
 
 ![letter dispaly_correct guess](https://user-images.githubusercontent.com/97182442/174427592-fc7a04b6-719c-401e-9006-4b693264efa7.png)
@@ -117,7 +117,7 @@ Web-based diagramming application used to build flowchart.
 
 
 
-6. In case the player fails and ends the game, the correct answer will be displayed.
+6. In case the player fails, the correct answer will be displayed.
 
 
 ![last stage](https://user-images.githubusercontent.com/97182442/174430168-7df144a4-ac20-4a09-a9b8-bbad39798065.png)
@@ -185,10 +185,10 @@ This project was deployed using Code Insitute's mock terminal for Heroku.
 
 ## Credits
 
-- Code Institute for the deployment terminal and template
+- Code Institute for the deployment terminal and template.
 - My mentor, Narendar Singh for his valuable advice and feedback.
 - Words were generated from https://www.enchantedlearning.com/wordlist/computer.shtml
-- I have referred w3scools.com
+- I have referred w3schools.com for writing the python code.
 - For writing the code, I have referred https://www.chegg.com/homework-help/questions-and-answers/write-program-called-hangmanpy-expands-upon-tutorial-8-problem-3-following-changes-made-pr-q88357648
 
 
