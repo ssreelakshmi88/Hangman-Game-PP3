@@ -39,8 +39,7 @@ def get_user_detail():
 
 def rules_help():
     """Displays rules to the user"""
-    print(
-        """ \n <------------------------------------------------------------>
+    rules = """ \n <------------------------------------------------------------>
     \n \033[3;33m Rules: \033[0;0m \n
     The Hangman is a simple, WORD game
     where the goal is to find the missing words.
@@ -54,8 +53,7 @@ def rules_help():
     7. You wont be penalized for using symbol or number or for reusing the
     letters.
     \n <------------------------------------------------------------>\n"""
-    )
-    input("Press Enter to continue...")
+    return rules
 
 
 # Initializing all the conditions required for the game:
@@ -70,7 +68,7 @@ def initialize_game():
     global ORIGINAL_WORD
     global MAX_ATTEMPTS
     ATTEMPTS = 0
-    WORD = random.choice(computer_names)
+    WORD = "qwerty"  # random.choice(computer_names)
     ORIGINAL_WORD = WORD
     LENGTH = len(WORD)
     DISPLAY = "-" * LENGTH
@@ -83,24 +81,29 @@ def initialize_game():
 # A loop to re-execute the game when the first round ends
 
 
-def user_wants_to_play_again():
+def game_loop():
     """This function will be executed when the first round of the game ends"""
     global PLAY_GAME
-    PLAY_GAME = input(
-        "Do you want to play again? y = yes, n = no, h = help \n").lower()
-    while PLAY_GAME not in ["y", "n", "h"]:
-        PLAY_GAME = input(
-            "Do You want to play again? y = yes, n = no, h = help menu \n"
-        )
-    if PLAY_GAME == "h":
-        rules_help()
-        return False
+    PLAY_GAME = input("Do you want to play again? y = yes, n = no \n")
+    while PLAY_GAME not in ["y", "n", "Y", "N"]:
+        PLAY_GAME = input("Do You want to play again? y = yes, n = no \n")
     if PLAY_GAME == "y":
-        os.system("clear")
-        return True
+        initialize_game()
     elif PLAY_GAME == "n":
         print("Thank you for Playing! We expect you back again!")
         exit()
+
+
+def is_user_ready_to_play():
+    """check_if_user_needs_help"""
+    is_help_needed = input(
+        f"Hey {USERNAME}, Do You want help? y = yes, n = no \n"
+    ).lower()
+    while is_help_needed == "y":
+        play_rules = rules_help()
+        print(play_rules)
+        is_help_needed = input("Do You want help? y = yes, n = no \n").lower()
+    return True
 
 
 def is_guess_included_in_word(guess):
@@ -214,13 +217,13 @@ def init_game_engine():
     This function intializes game again
     """
     initialize_game()
-    print("Starting Game...Let's play...!")
-    clear_screen()
-    play_game()
+    if is_user_ready_to_play():
+        print("Starting Game....!\n Let's play...!")
+        os.system("clear")
+        play_game()
 
 
 if __name__ == "__main__":
-    input("Press Enter to start the game")
     while True:
-        if user_wants_to_play_again():
-            init_game_engine()
+        input("Press Enter to start the game")
+        init_game_engine()
