@@ -87,7 +87,7 @@ def user_wants_to_play_again():
     """This function will be executed when the first round of the game ends"""
     global PLAY_GAME
     PLAY_GAME = input(
-        "Do you want to play again? y = yes, n = no, h = help \n").lower()
+        "Do you want to play? y = yes, n = no, h = help \n").lower()
     while PLAY_GAME not in ["y", "n", "h"]:
         PLAY_GAME = input(
             "Do You want to play again? y = yes, n = no, h = help menu \n"
