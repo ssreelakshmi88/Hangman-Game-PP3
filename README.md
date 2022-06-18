@@ -118,12 +118,12 @@ Web-based diagramming application used to build flowchart.
 
 
 6. In case the player fails and ends the game, the correct answer will be displayed.
-7. 
+
 
 ![last stage](https://user-images.githubusercontent.com/97182442/174430168-7df144a4-ac20-4a09-a9b8-bbad39798065.png)
 
 
-7. If the player wishes to continue, after each play he/she can do so by clicking the yes button.
+7. If the player wishes to continue, after each play he/she can do so by clicking the yes(y) button.
 
 
 
@@ -151,8 +151,9 @@ For this project I have done the following tests:
 ![PEP8 result](https://user-images.githubusercontent.com/97182442/174427750-5f3924f4-170d-414d-8958-f30f41e4dbf1.png)
 
 
-- The code was also passed throuth Pylint. I encountered some warnings related to global
-  variables. To solve this issue, I installed pylintrc in my gitpod.
+- I encountered some warnings related to global variables. To solve this issue, I installed pylintrc in my gitpod.
+  
+ - The code was also passed throuth Pylint. The code has been rated 9.76/10.
   
   ![Pylint test result](https://user-images.githubusercontent.com/97182442/174427746-949951f1-3840-45f4-9bbe-275928a9efff.png)
 
