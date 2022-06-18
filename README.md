@@ -34,7 +34,7 @@
 
 ### Languages Used
 
-1. Python
+ 1. Python
 
 #### Git
 
@@ -81,21 +81,53 @@ Web-based diagramming application used to build flowchart.
 #### Existing features
 
 1. The start screen will display an option to enter player name.
+![welcome_game](https://user-images.githubusercontent.com/97182442/174427530-c1ddc450-6cc4-4bf9-bfdb-2b0166a151b7.png)
+
+
+
+![Welcome_user](https://user-images.githubusercontent.com/97182442/174427541-e4ddac8b-5ddb-4165-a02c-6c11caa82a34.png)
 
 2. Option for user to access game rules has been provided including the theme i.e., computer word list.
 
+
+![rules](https://user-images.githubusercontent.com/97182442/174427554-49b3d8cc-c354-4cae-898f-959337c53f33.png)
+
+
 3. The player has 5 attempts to guess the right word from the computer vocabulary.
 
-4. Each wrong attempt will be penalized by a step-by-step appearance of a hanging man. 
+
+![hangman stage_1](https://user-images.githubusercontent.com/97182442/174427563-cb71231a-d7cf-49aa-aba1-944a4e317a13.png)
+
+
+4. Each wrong attempt will be penalized by a step-by-step appearance of a hanging man.
+
+
+
+![stage_2](https://user-images.githubusercontent.com/97182442/174427576-ddb1fb39-7fdc-4009-8736-50a0ac3d09c7.png)
+
+
+![last stage](https://user-images.githubusercontent.com/97182442/174427584-8c21b091-0b57-4cd2-af52-16b7b916f1dd.png)
 
 5. Each correct guess (alphabet) will appear in the blank spaces in the correct order of the words in the computer vocabulary. 
 
+
+![letter dispaly_correct guess](https://user-images.githubusercontent.com/97182442/174427592-fc7a04b6-719c-401e-9006-4b693264efa7.png)
+
+
 6. In case the player fails and ends the game, the correct answer will be displayed.
+
+![last stage](https://user-images.githubusercontent.com/97182442/174427596-8f697da0-a543-485a-9047-d0a46d13e5f9.png)
 
 7. If the player wishes to continue, after each play he/she can do so by clicking the yes button.
 
 
-## Testing
+
+![ask to play game again](https://user-images.githubusercontent.com/97182442/174427727-8530099c-f8c0-4590-8918-97178f6c26e8.png)
+
+
+
+## Testing!
+
 
 For this project I have done the following tests:
 
@@ -110,8 +142,16 @@ For this project I have done the following tests:
 
 - PEP8 No errors were found in PEP8online.com
 
+
+![PEP8 result](https://user-images.githubusercontent.com/97182442/174427750-5f3924f4-170d-414d-8958-f30f41e4dbf1.png)
+
+
 - The code was also passed throuth Pylint. I encountered some warnings related to global
   variables. To solve this issue, I installed pylintrc in my gitpod.
+  
+  ![Pylint test result](https://user-images.githubusercontent.com/97182442/174427746-949951f1-3840-45f4-9bbe-275928a9efff.png)
+
+  
 
 
 ### Deployment
