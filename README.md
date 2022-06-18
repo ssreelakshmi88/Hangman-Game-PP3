@@ -114,9 +114,12 @@ Web-based diagramming application used to build flowchart.
 ![letter dispaly_correct guess](https://user-images.githubusercontent.com/97182442/174427592-fc7a04b6-719c-401e-9006-4b693264efa7.png)
 
 
+
+![last stage](https://user-images.githubusercontent.com/97182442/174430168-7df144a4-ac20-4a09-a9b8-bbad39798065.png)
+
+
 6. In case the player fails and ends the game, the correct answer will be displayed.
 
-![last stage](https://user-images.githubusercontent.com/97182442/174427596-8f697da0-a543-485a-9047-d0a46d13e5f9.png)
 
 7. If the player wishes to continue, after each play he/she can do so by clicking the yes button.
 
