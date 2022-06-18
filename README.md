@@ -105,8 +105,8 @@ Web-based diagramming application used to build flowchart.
 
 ![stage_2](https://user-images.githubusercontent.com/97182442/174427576-ddb1fb39-7fdc-4009-8736-50a0ac3d09c7.png)
 
+![last stage](https://user-images.githubusercontent.com/97182442/174430168-7df144a4-ac20-4a09-a9b8-bbad39798065.png)
 
-![last stage](https://user-images.githubusercontent.com/97182442/174427584-8c21b091-0b57-4cd2-af52-16b7b916f1dd.png)
 
 5. Each correct guess (alphabet) will appear in the blank spaces in the correct order of the words in the computer vocabulary. 
 
@@ -115,10 +115,12 @@ Web-based diagramming application used to build flowchart.
 
 
 
-![last stage](https://user-images.githubusercontent.com/97182442/174430168-7df144a4-ac20-4a09-a9b8-bbad39798065.png)
 
 
 6. In case the player fails and ends the game, the correct answer will be displayed.
+7. 
+
+![last stage](https://user-images.githubusercontent.com/97182442/174430168-7df144a4-ac20-4a09-a9b8-bbad39798065.png)
 
 
 7. If the player wishes to continue, after each play he/she can do so by clicking the yes button.
@@ -134,7 +136,7 @@ Web-based diagramming application used to build flowchart.
 
 For this project I have done the following tests:
 
-- Passed the code through a PEP8 liner and confirmed there are no errors.
+- Passed the code through a [PEP8 liner](http://pep8online.com/) and confirmed there are no errors.
 
 - Using directional key inputs'.
 
